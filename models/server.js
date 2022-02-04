@@ -35,7 +35,7 @@ class Server{
     }
 
     routes(){ 
-       this.app.use(this.usuariosPath, require('../routes/usuario'));
+       this.app.use(this.usuariosPath, require('../routes/usuario.route'));
 
     }
     listen(){
