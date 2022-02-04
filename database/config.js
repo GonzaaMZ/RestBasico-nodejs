@@ -2,13 +2,6 @@ const mongoose = require('mongoose');
 
 const dbConnection = async () => {
 
-/*
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-*/
-
     try {
         await mongoose.connect(process.env.MONGODB, {
             useNewUrlParser: true,
@@ -29,3 +22,13 @@ const dbConnection = async () => {
 module.exports = {
     dbConnection
 }
+
+
+
+
+/*
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+*/
