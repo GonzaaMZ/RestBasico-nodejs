@@ -36,6 +36,8 @@ const usuariosPost = async (req, res) => {
     //Guardar en DB
     await usuario.save();
 
+    
+
     res.json({
         usuario
     })
@@ -62,16 +64,12 @@ const usuariosPut =async (req, res) => {
 const usuariosDelete = async (req, res) => {
     const {id} = req.params;
 
-    //Borrar fisicamente de la DB
-    //const usuario = await Usuario.findByIdAndDelete(id); 
-    
     const usuario = await Usuario.findByIdAndUpdate(id, {estado: false});
     
     res.json({
-        usuario
+        usuario,
     })
 }
-
 
 
 
@@ -82,3 +80,10 @@ module.exports = {
     usuariosDelete
 
 }
+
+
+//Anotaciones Viejas para limpiar el codigo
+
+
+    //Borrar fisicamente de la DB
+    //const usuario = await Usuario.findByIdAndDelete(id); 

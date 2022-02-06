@@ -9,7 +9,7 @@ const UsuarioSchema = Schema({
         type: String,
         required: [true, 'El correo es obligatorio']
     },
-    correo: {
+    password: {
         type: String,
         required: [true, 'La contraseña es obligatorio']
     },
@@ -30,5 +30,12 @@ const UsuarioSchema = Schema({
         default: false
     },
 });
+
+
+UsuarioSchema.methods.toJSON = function(){
+    const {__v, password,_id, ...usuario} = this.toObject();
+    usuario.uid = _id;
+    return usuario;
+}
 
 module.exports =  model('Usuario', UsuarioSchema);
