@@ -27,6 +27,7 @@ const ProductoSchema = Schema({
     },
     descripcion: {type: String},
     disponible: {type: Boolean},
+    img: {type: String}
 });
 
 ProductoSchema.methods.toJSON = function(){
